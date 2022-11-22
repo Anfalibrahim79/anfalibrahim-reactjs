@@ -1,0 +1,27 @@
+.button-search {
+    background: linear-gradient(to right,#ffacc7 ,#B1B2FF);
+ background-color: #ffacc7;
+ color: #9e56a3;
+ font-family: Trebuchet MS;
+ font-size: 18px;
+ font-weight: 800;
+ font-style: normal;
+ text-decoration: none;
+ padding: 10px 20px;
+ border: 0px solid #000;
+ border-radius: 14px;
+ display: inline-block;
+ box-shadow: 6px -2px 2px 0px rgba(111.14747107028961,107.48017166200965,107.48017166200965,0.5);
+}
+  
+.button-search:hover {
+    background: linear-gradient(to right,#f2a3bd ,#a8a6f2);
+ background-color: #f2a3bd;
+}
+.button-search:active{
+    transform: scale(0.95);
+}
+.navbarBG{
+    background-color: #FFD1D1;
+}
+  
