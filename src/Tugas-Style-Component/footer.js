@@ -6,7 +6,7 @@ class FooterBio extends React.Component{
             <div>
                 <div className="container-fluid bg-black footer">
                     <footer>
-                        <p className="text-white text-center footer ">© 2022 Anfal Ibrahim</p>
+                        <p className="text-white text-center footer " >© 2022 Anfal Ibrahim</p>
                     </footer>
                 </div>
 
