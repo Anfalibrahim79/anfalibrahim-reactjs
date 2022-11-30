@@ -7,6 +7,7 @@ import FooterBio from './Tugas-Style-Component/footer';
 import MyBio from './Tugas-Style-Component/mybio';
 import NavbarBio from './Tugas-Style-Component/navbar';
 import './App.css'
+import News from './Tugas Lifecycle/News';
 
 const App =  () =>{
   
@@ -17,7 +18,9 @@ const App =  () =>{
       <MyBio/>
       <ContactBio/>
       <FooterBio/> */}
-      <FormComponent/>
+      {/* <FormComponent/> */}
+      {/* <FormComponent /> */}
+      <News />
       </>
   );
 }
