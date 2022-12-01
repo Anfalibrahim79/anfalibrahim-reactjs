@@ -59,7 +59,7 @@ export default class NewsContent extends React.Component {
                                     <Card.Text style={{height: "15px", textAlign: "center"}}>
                                     Author :"{el.author}"
                                     </Card.Text>
-                                    <a href={el.url}><Button variant="primary" style={{marginTop : "50px", marginLeft: "40px"}}>Source News</Button></a>
+                                    <a href={el.url}><Button variant="primary" style={{marginTop : "50px", marginLeft: "40px"}}>Source News....</Button></a>
                                     
                                 </Card.Body>
                             </Card>
