@@ -17,7 +17,7 @@ export default class NewsContent extends React.Component {
     
 
     componentDidMount(){
-        fetch('https://newsapi.org/v2/top-headlines?country=id&apiKey=ca0598bf76a64e138b5d742f83ed10ea')
+        fetch('https://berita.apiku.workers.dev/v2/top-headlines?country=id&apiKey=ca0598bf76a64e138b5d742f83ed10ea')
         .then((res) => res.json())
         .then((e) =>{
             const dataNews = e.articles;
@@ -26,12 +26,11 @@ export default class NewsContent extends React.Component {
                 news : dataNews
             })
         })
-        
+        AOS.init()
     }
     
 
    
-  
   
   
     render() {
@@ -52,7 +51,7 @@ export default class NewsContent extends React.Component {
                         return this.state.seacrh.toLowerCase() === "" ? item : item.title.toLowerCase().includes(this.state.seacrh)
                     }).map((el, index) => {
                         return(
-                            <Card  className='shadow p-3 mb-5 bg-white rounded card' style={{ width: '17rem' , margin: '0 20px', height: '30rem', padding: "10px"}} key={index}>
+                            <Card data-aos="fade-right"  className='shadow p-3 mb-5 bg-white rounded card' style={{ width: '17rem' , margin: '0 20px', height: '30rem', padding: "10px"}} key={index}>
                                 <Card.Title className='fs-6' style={{height: "30px"}}>{el.title}</Card.Title>
                                 <Card.Img variant="top" src={el.urlToImage} style={{width: "100%", height: "10rem", marginTop: "70px", marginBottom: "10px", padding: "10px 20p"}} />
                                 <Card.Body>
