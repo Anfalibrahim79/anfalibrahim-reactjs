@@ -17,6 +17,7 @@ const CardNews = ({dataNews, index}) => {
   }
   return (
     <>
+  
       <Card  className='shadow p-3 mb-5 bg-white rounded card' style={{ width: '17rem' , margin: '0 20px', height: '28rem', padding: "10px"}} key={index}>
         <Card.Title style={{height : "70px"}}>{dataNews.title}</Card.Title>
         <Card.Img variant="top" style={{width: "15rem", height: "9rem", marginTop: "70px", marginBottom: "20px"}} src={dataNews.urlToImage} />

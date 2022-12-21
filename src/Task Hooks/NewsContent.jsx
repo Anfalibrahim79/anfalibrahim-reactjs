@@ -17,36 +17,29 @@ const NewsContent = () => {
   const[news, setNews]= useState([])
   const[search, setSearch] = useState('')
   const[loading, setLoading] = useState(false)
+  const[currentPage, setCurrentPage] = useState(0)
+  const[postPerPage, setPostPerPage] =useState(10)
 
   useEffect(() => {
     const fecthData = async () =>{
-      let result = await axios.get(`https://berita.apiku.workers.dev/v2/top-headlines?country=id&apiKey=ca0598bf76a64e138b5d742f83ed10ea`)
+      setLoading(true)
+      let result = await axios.get(`https://newsapi.org/v2/everything?q=apple&from=2022-12-12&to=2022-12-12&sortBy=popularity&apiKey=ca0598bf76a64e138b5d742f83ed10ea`)
       let data = result.data.articles
       console.log(data);
-      // let output = data.map((e) =>{
-      //   return{
-      //         'title' :e.title,
-      //         'description': e.description,
-      //         'url': e.url,
-      //         'urlToImage': e.urlToImage,
-      //         'content': e.content,
-      //         'author': e.author,
-      //         'publishedAt': e.publishedAt
-      //   }
-      // })
+
       setNews(data)
+      setTimeout(() =>{
+      setLoading(false)
+    },3000)
 
     }
     fecthData()
   }, [])
 
-
-  useEffect(() =>{
-    setLoading(true)
-    setTimeout(() =>{
-      setLoading(false)
-    },3000)
-  },[])
+  const lastPostIndex = currentPage * postPerPage;
+  const firstPostIndex = lastPostIndex - postPerPage;
+  const currentPost = news.slice(firstPostIndex, lastPostIndex)
+  
   
   const handleSearch = (e) =>{
     setSearch(e.target.value)
@@ -80,10 +73,16 @@ const NewsContent = () => {
                   data-testid="loader"
                   />:
                   news.filter((item)=>{
-                    return search.toLowerCase() === ""? item : item.title.toLowerCase().includes(search);
+                    // return search.toLowerCase() === ""? item : item.title.toLowerCase().includes(search);
+                    if(search.toLowerCase() === ""){
+                      return item
+                    }else{
+                      return item.title.toLowerCase().includes(search)
+                    }
                   }).map((el, index) =>{
+                    console.log(el);
                     return(
-                      <CardNews data-aos="fade-up" dataNews = {el} index={index}/>
+                      <CardNews data-aos="fade-up" dataNews = {el} currentPost={currentPost} index={index}/>
                      
                     )
                   })
