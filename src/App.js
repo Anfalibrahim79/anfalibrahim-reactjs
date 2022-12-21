@@ -9,6 +9,7 @@ import React from 'react';
 import './App.css'
 // import NewsHooks from './Task Hooks';
 import Index from './Task Router';
+import Router from './Task Router/Routes';
 // import News from './Tugas Lifecycle/News';
 
 
@@ -17,7 +18,7 @@ const App =  () =>{
   return (
       <>
       
-      <Index/>
+      <Router />
       </>
   );
 }

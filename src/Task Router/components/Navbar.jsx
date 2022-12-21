@@ -1,10 +1,12 @@
 import React from 'react'
 import { Nav, Container,Navbar } from 'react-bootstrap'
-import { Link} from 'react-router-dom'
+import { Link, Outlet} from 'react-router-dom'
 
 const NavbarHome = () => {
 
   return (
+    <>
+    
     <Navbar className='navbar-news sticky-top bg-white lh-1' expand="lg ">
       <Container fluid>
         <Navbar.Brand href="#" style={{fontSize: "2.5rem", fontWeight: "bold", marginLeft : "20px"}}>Daily News</Navbar.Brand>
@@ -17,7 +19,7 @@ const NavbarHome = () => {
             >
             <div className='nav-li'>
               {/* <Nav.Link href="#action1"> Home</Nav.Link> */}
-              <Link to={'/home'}>Home</Link>
+              <Link to={'/'}>Home</Link>
               <Nav.Link href="#action2">About</Nav.Link>
               <Nav.Link href="#action2">News</Nav.Link>
             </div>
@@ -34,6 +36,8 @@ const NavbarHome = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    <Outlet/>
+    </>
     
   )
 }

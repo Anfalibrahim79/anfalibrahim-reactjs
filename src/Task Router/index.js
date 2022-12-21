@@ -12,7 +12,8 @@ const Index = () => {
   return (
     <>
         <NavbarHome/>
-        <Routes />
+        <HeroSection/>
+        <NewsContent />
 
     </>
  )
