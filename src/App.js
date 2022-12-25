@@ -7,9 +7,9 @@ import React from 'react';
 // import MyBio from './Tugas-Style-Component/mybio';
 // import NavbarBio from './Tugas-Style-Component/navbar';
 import './App.css'
+import Index from './Task Redux';
 // import NewsHooks from './Task Hooks';
-import Index from './Task Router';
-import Router from './Task Router/Routes';
+// import Router from './Task Router/Routes';
 // import News from './Tugas Lifecycle/News';
 
 
@@ -18,7 +18,7 @@ const App =  () =>{
   return (
       <>
       
-      <Router />
+      <Index />
       </>
   );
 }

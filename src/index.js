@@ -6,13 +6,23 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import { BrowserRouter } from 'react-router-dom';
+import {createStore, compose , applyMiddleware} from 'redux'
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import reducers from './Task Redux/reducers';
+
+
+const store = createStore(reducers, compose(applyMiddleware(thunk)))
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+
+    </Provider>
   </React.StrictMode>
 );
 
