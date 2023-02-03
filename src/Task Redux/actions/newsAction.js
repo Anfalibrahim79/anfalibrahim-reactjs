@@ -13,6 +13,7 @@ export const getListNews = () => {
             payload : {
                 loading : true,
                 data : false,
+                filter : "",
                 errorMessage : false
             }
         })
@@ -20,7 +21,7 @@ export const getListNews = () => {
         //get API 
         axios({
             method: 'GET',
-            url : 'https://newsapi.org/v2/everything?q=apple&from=2022-12-12&to=2022-12-12&sortBy=popularity&apiKey=ca0598bf76a64e138b5d742f83ed10ea',
+            url : 'https://newsapi.org/v2/everything?q=tesla&from=2023-01-03&sortBy=publishedAt&apiKey=ca0598bf76a64e138b5d742f83ed10ea',
             timeout: 120000
         })
             .then((response) => {
@@ -31,6 +32,7 @@ export const getListNews = () => {
                     payload : {
                         loading : false,
                         data : response.data.articles,
+                        filter : false,
                         errorMessage : false
                     }
                 })
@@ -43,6 +45,7 @@ export const getListNews = () => {
                     payload : {
                         loading : false,
                         data : false,
+                        filter : false,
                         errorMessage : error.message
                     }
                 })

@@ -7,7 +7,7 @@ const initialState ={
 
 }
 
-const news = (state = initialState, action) => {
+const NewsReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_LIST_NEWS:
             console.log('4. Masuk reducer' , action);
@@ -23,4 +23,4 @@ const news = (state = initialState, action) => {
         
     }
 }
-export default news
+export default NewsReducer

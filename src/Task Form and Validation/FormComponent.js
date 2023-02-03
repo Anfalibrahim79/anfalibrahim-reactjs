@@ -5,15 +5,15 @@ const FormComponent = () => {
     const [input, setInput] = useState({
         email : "",
         password : "",
-        check : false
+      
 
     })
     const[showErrors, setShowErrors]=useState([])
 
     const handleChange = (e) => {
-        if (e.target.name === "check") {
-          return setInput({ ...input, [e.target.name]: e.target.checked });
-        }
+        // if (e.target.name) {
+        //   return setInput({ ...input, [e.target.name]: e.target.checked });
+        // }
     
         return setInput({ ...input, [e.target.name]: e.target.value });
       };

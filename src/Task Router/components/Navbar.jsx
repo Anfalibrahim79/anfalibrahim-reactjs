@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Nav, Container,Navbar } from 'react-bootstrap'
 import { Link, Outlet} from 'react-router-dom'
+import { BeatLoader } from 'react-spinners';
 
 const NavbarHome = () => {
-
+  
   return (
     <>
     
     <Navbar className='navbar-news sticky-top bg-white lh-1' expand="lg ">
       <Container fluid>
-        <Navbar.Brand href="#" style={{fontSize: "2.5rem", fontWeight: "bold", marginLeft : "20px"}}>Daily News</Navbar.Brand>
+        <Navbar.Brand href="#" style={{fontSize: "2.5rem", fontWeight: "bold", marginLeft : "20px"}}><Link to={'/'} style={{textDecoration: "none", color: "#FD8A8A"}}>Daily News</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -36,7 +37,8 @@ const NavbarHome = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    <Outlet/>
+      <Outlet/>
+ 
     </>
     
   )

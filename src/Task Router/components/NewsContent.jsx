@@ -12,10 +12,15 @@ const NewsContent = () => {
     const [search, setSearch] = useState('')
     useEffect(() => {
         const fecthData = async  () =>{
-        let result = await axios.get(`https://newsapi.org/v2/everything?q=apple&from=2022-12-12&to=2022-12-12&sortBy=popularity&apiKey=ca0598bf76a64e138b5d742f83ed10ea`);
-        let output = result.data.articles
-        // console.log(output);
-        setNews(output)
+        let result = await axios.get(`https://newsapi.org/v2/everything?q=tesla&from=2023-01-03&sortBy=publishedAt&apiKey=ca0598bf76a64e138b5d742f83ed10ea`);
+        // console.log(output);]
+        try {
+          let output = result.data.articles
+          
+          setNews(output)
+        } catch (error) {
+          console.log(error);
+        }
         }
         fecthData()
     },[])

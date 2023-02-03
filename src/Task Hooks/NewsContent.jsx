@@ -73,12 +73,12 @@ const NewsContent = () => {
                   data-testid="loader"
                   />:
                   news.filter((item)=>{
-                    // return search.toLowerCase() === ""? item : item.title.toLowerCase().includes(search);
-                    if(search.toLowerCase() === ""){
-                      return item
-                    }else{
-                      return item.title.toLowerCase().includes(search)
-                    }
+                    return search.toLowerCase() === ''? item: item.title.toLowerCase().includes(search);
+                    // if(search.toLowerCase() === ""){
+                    //   return item
+                    // }else{
+                    //   return item.title.toLowerCase().includes(search)
+                    // }
                   }).map((el, index) =>{
                     console.log(el);
                     return(
